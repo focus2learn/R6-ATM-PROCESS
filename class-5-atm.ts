@@ -6,6 +6,7 @@
 // import inquirer package
 
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 
 
@@ -23,7 +24,7 @@ console.clear()
         [{
             name : "cardinsert",
             type : "input",
-            message : "\n\n\t\t\t\tPlease Insert ATM Card & Press any key to proceed ......",
+            message : chalk.green("\n\n\t\t\t\tPlease Insert ATM Card & Press any key to proceed ......"),
         },
       ]);
 
@@ -35,7 +36,7 @@ while(condition)
         {
             name : "pincode",
             type : "input",
-            message : "\n\n\n\t\t\t\tPlease Enter PIN Code 1 2 3 ...........",
+            message :chalk.blueBright( "\n\n\n\t\t\t\tPlease Enter PIN Code 1 2 3 ..........."),
             
         },
 
@@ -46,7 +47,7 @@ while(condition)
     if(userpininput.pincode === atmpincode)
     {
 
-      console.log(" \n\n\t\t\t\tVerification is Confirmed...........");
+      console.log(chalk.green(" \n\n\t\t\t\tVerification is Confirmed..........."));
     //}
 
     // User input during execution...
@@ -71,7 +72,7 @@ while(condition)
                 if(step2.operator === "Cash-Withdraw")
                 {
                   console.clear()
-                  console.log("\n\n\n\n\n\t\t\t\t\t .... CASH WITHDRAW ....\n")
+                  console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... CASH WITHDRAW ....\n"))
                   let amount = await inquirer.prompt(
                     {
                       name: "wdamount",
@@ -89,13 +90,13 @@ while(condition)
                   {
                     console.clear()
                     cashbalance -= amount.wdamount
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... CASH WITHDRAW ....\n")
-                    console.log("\n\n\t\t\t\t\tYour Remaing Balance is Rs.. "+ cashbalance)
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... CASH WITHDRAW ....\n"))
+                    console.log(chalk.green("\n\n\t\t\t\t\tYour Remaing Balance is Rs.. "+ cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                 else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....");
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."));
                   }
 
                 };
@@ -105,7 +106,7 @@ while(condition)
                 if( step2.operator === "Fast-Cash")
                 {
                   console.clear()
-                  console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
+                  console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
                   const fastcash = await inquirer.prompt(
                     {
                       message: "\n\n\t\tSelect Fast Cash Amount.... : ",
@@ -117,19 +118,20 @@ while(condition)
 
           // FAST CASH , CALCULATIONS AND DISPLAY REMAINING BALANCE        
                   
+
                   if(fastcash.fastoperate === "1000")
                   { 
                     console.clear()
                   if(cashbalance > 1000)
                   {
                     cashbalance -= 1000
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                    console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                    console.log(chalk.yellowBright("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
                 
@@ -139,13 +141,13 @@ while(condition)
                   {
                     console.clear()
                     cashbalance -= 2000
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                    console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
 
@@ -155,13 +157,13 @@ while(condition)
                   if(cashbalance > 3000)
                   {
                     cashbalance -= 3000
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                    console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
 
@@ -171,13 +173,13 @@ while(condition)
                   if(cashbalance > 5000)
                   {
                       cashbalance -= 5000
-                      console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                      console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
-                      console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
+                    console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                     }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
                 
@@ -187,13 +189,13 @@ while(condition)
                   if(cashbalance > 10000)
                   {
                     cashbalance -= 10000
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                    console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
 
@@ -203,13 +205,13 @@ while(condition)
                   if(cashbalance > 15000)
                   {
                     cashbalance -= 15000
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                    console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
 
@@ -218,13 +220,13 @@ while(condition)
                   if(cashbalance > 20000)
                   {
                     cashbalance -= 20000
-                    console.log("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n")
-                    console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                    console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... FAST CASH  ....\n"))
+                    console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                     console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                   else
                   {
-                    console.log("\n\n\t\t\ Sorry Insufficient Balance.....")
+                    console.log(chalk.red("\n\n\t\t\ Sorry Insufficient Balance....."))
                   }
                   }
                 };
@@ -234,8 +236,8 @@ while(condition)
                 if(step2.operator === "Balance-Inquiry")
                 {
                   console.clear()
-                  console.log("\n\n\n\n\n\t\t\t\t\t .... BALANCE INQUIRY  ....\n")
-                  console.log("\n\n\t\tYour remaining balance is Rs." + cashbalance)
+                  console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... BALANCE INQUIRY  ....\n"))
+                  console.log(chalk.green("\n\n\t\tYour remaining balance is Rs." + cashbalance))
                   console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                 };
           
@@ -244,7 +246,7 @@ while(condition)
                 if(step2.operator === "Utility-Bills")
                 {
                   console.clear()
-                  console.log("\n\n\n\n\n\t\t\t\t\t .... UTILITY BILLS  ....\n")
+                  console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... UTILITY BILLS  ....\n"))
 
                   const utibills = await inquirer.prompt(
                     {
@@ -261,10 +263,10 @@ while(condition)
                   {
                   console.clear()
                   let randnumber = Math.floor(Math.random()*3000+300)
-                  console.log("\n\n\n\n\n\t\t\t\t\t .... UTILITY BILL  ....\n")
-                  console.log("\n\n\t\tYour Current balance is Rs..." + cashbalance)
-                  console.log("\n\t\tYour Current Bill is RS......"+ randnumber)
-                  console.log(`\n\t\tYour Current Balance is  RS .....${cashbalance -=randnumber}`)
+                  console.log(chalk.yellow("\n\n\n\n\n\t\t\t\t\t .... UTILITY BILL  ....\n"))
+                  console.log(chalk.blue("\n\n\t\tYour Current balance is Rs..." + cashbalance))
+                  console.log(chalk.bgWhite.black("\n\t\tYour Current Bill is RS......"+ randnumber))
+                  console.log(chalk.green(`\n\t\tYour Remaining Balance is  RS .....${cashbalance -=randnumber}`))
                   console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
                   }
                 };
@@ -277,7 +279,7 @@ while(condition)
                 {
               name : "wrongpin2",
               type : "confirm",
-              message:"\n\n\t\tSorry ! Your PIN Code Not Correct Try again........",
+              message:chalk.red("\n\n\t\tSorry ! Your PIN Code Not Correct Try again........"),
               default : false,
               
                       
@@ -296,15 +298,15 @@ while(condition)
       {
         name : "atmagain2",
         type : "confirm",
-        message:"\n\n\t\tDo You want More Transactions........",
-        //default : false,            
+        message: "\n\n\t\t Do You want More Transactions........",
+        default : false,            
       }
       ]); 
 
       console.clear();
       if(atmagain1.atmagain2 !== true)
       {
-        console.log("\n\n\n\n\n\t\t\t\t\t .... Thank you Using ATM services  ....\n")
+        console.log(chalk.green("\n\n\n\n\n\t\t\t\t\t .... Thank you Using ATM services  ...."))
         console.log("\n\n\\n\nt\t\t\t\t                  (focus2learn)")
         break;
       }
